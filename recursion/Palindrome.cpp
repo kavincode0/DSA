@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+bool checkPalindrome(string s, int i, int j){
+    if(i>j)
+    return true;
+
+    if(s[i]!=s[j])
+    return false;
+
+    i++;
+    j--;
+    checkPalindrome(s, i, j);
+}
+int main(){
+    string s = "book";
+    if(checkPalindrome(s, 0, 3))
+    cout<<s<<" is a Palindrome";
+    else
+    cout<<s<<" is not a Palindrome";
+}
